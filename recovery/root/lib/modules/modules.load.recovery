@@ -197,3 +197,9 @@ tran_expand_key.ko
 lzo.ko
 lzo-rle.ko
 tnek.ko
+mtk_gpufreq_mt6789.ko
+ged.ko
+mali_kbase_mt6789.ko
+mtk_gpu_qos.ko
+mtk_qos.ko
+sspm_v3.ko
