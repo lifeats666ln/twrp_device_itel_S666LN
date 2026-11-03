@@ -7,7 +7,9 @@
 # Inherit from mt6789-common
 $(call inherit-product, device/transsion/mt6789-common/common.mk)
 
-
-# Copy patched touch screen driver module
+# Touchscreen
 PRODUCT_COPY_FILES += \
-   $(LOCAL_PATH)/touch/adaptive-ts.ko:recovery/root/lib/modules/adaptive-ts.ko
+    $(LOCAL_PATH)/touch/adaptive-ts.ko:recovery/root/lib/modules/adaptive-ts.ko
+
+# AERA
+$(call inherit-product, $(LOCAL_PATH)/aera_S666LN.mk)
