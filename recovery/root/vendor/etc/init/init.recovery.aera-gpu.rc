@@ -1,0 +1,12 @@
+# AERA only probes the Adreno EGL/GLES paths; point both at the stock Mali driver.
+on early-init
+    export LD_LIBRARY_PATH /vendor/lib64:/vendor/lib64/hw:/system/lib64
+    symlink /vendor/lib64/egl/mt6789/libGLES_mali.so /vendor/lib64/egl/libEGL_adreno.so
+    symlink /vendor/lib64/egl/mt6789/libGLES_mali.so /vendor/lib64/egl/libGLESv2_adreno.so
+
+service aera-graphics-allocator /vendor/bin/hw/android.hardware.graphics.allocator@4.0-service-mediatek.mt6789
+    class hal
+    seclabel u:r:recovery:s0
+    user root
+    group root graphics drmrpc
+    capabilities SYS_NICE
