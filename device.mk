@@ -11,5 +11,9 @@ $(call inherit-product, device/transsion/mt6789-common/common.mk)
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/touch/adaptive-ts.ko:recovery/root/lib/modules/adaptive-ts.ko
 
+# GPU
+PRODUCT_COPY_FILES += \
+    vendor/recovery/prebuilt/arm64/xz:recovery/root/system/bin/aera-gpu-xz
+
 # AERA
 $(call inherit-product, $(LOCAL_PATH)/aera_S666LN.mk)

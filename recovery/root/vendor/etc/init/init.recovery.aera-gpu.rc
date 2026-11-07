@@ -1,6 +1,8 @@
 # AERA only probes the Adreno EGL/GLES paths; point both at the stock Mali driver.
 on early-init
     export LD_LIBRARY_PATH /vendor/lib64:/vendor/lib64/hw:/system/lib64
+    # Shipped xz-compressed to fit the 64 MiB vendor_boot partition.
+    exec u:r:recovery:s0 root root -- /system/bin/aera-gpu-xz -d /vendor/lib64/egl/mt6789/libGLES_mali.so.xz
     symlink /vendor/lib64/egl/mt6789/libGLES_mali.so /vendor/lib64/egl/libEGL_adreno.so
     symlink /vendor/lib64/egl/mt6789/libGLES_mali.so /vendor/lib64/egl/libGLESv2_adreno.so
 
